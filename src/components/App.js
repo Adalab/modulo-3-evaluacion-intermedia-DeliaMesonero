@@ -20,6 +20,10 @@ function App() {
   const handleBtn = (ev) => {
     ev.preventDefault();
     setData([...data, newPhrase]);
+    setNewPhrase({
+      quote: "",
+      character: "",
+    });
   };
 
   //pintar listado frases
@@ -44,25 +48,25 @@ function App() {
           <input
             className="newPhrase"
             type="text"
-            name="frase"
-            id="frase"
-            placeholder="frase"
+            name="quote"
+            id="quote"
+            placeholder="Frase"
             value={newPhrase.quote}
             onChange={handleNewPhrase}
           />
           <input
             className="newPhrase"
             type="text"
-            name="personaje"
-            id="personaje"
-            placeholder="personaje"
+            name="character"
+            id="character"
+            placeholder="Personaje"
             value={newPhrase.character}
             onChange={handleNewPhrase}
           />
           <input
             className="btn"
             type="submit"
-            value="Añadir"
+            value="Añadir nueva frase"
             onClick={handleBtn}
           />
         </form>

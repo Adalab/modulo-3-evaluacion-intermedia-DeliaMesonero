@@ -4,19 +4,21 @@
 
 
 .App-header {
-  background-color: #282c34;
+  background-color: #175a0d;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: 18px;
   color: white;
+  margin-bottom: 10px;
 }
 
 .eachPhrase{
   text-align: left;
+  padding-top: 10px;
   
-  text-decoration: none;
+  
 }
 .character{
   color: #175a0d;
@@ -28,4 +30,10 @@
 }
 .newPhrase{
   margin: 20px;
+}
+.btn{
+  padding-left: 15px;
+  padding-right: 15px;
+  background-color: #175a0d;
+  color: white;
 }
