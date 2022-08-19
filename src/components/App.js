@@ -9,6 +9,7 @@ function App() {
     quote: "",
     character: "",
   });
+  const [search, setSearch] = useState("");
 
   const handleNewPhrase = (ev) => {
     setNewPhrase({
@@ -25,16 +26,22 @@ function App() {
       character: "",
     });
   };
-
+  const handleFilter = (ev) => {
+    setSearch(ev.target.value);
+  };
   //pintar listado frases
-  const htmlData = data.map((phrase, index) => {
-    return (
-      <li className="eachPhrase" key={index}>
-        <p>{phrase.quote}</p>
-        <p className="character">{phrase.character}</p>
-      </li>
-    );
-  });
+  const htmlData = data
+    //.filter((phrase) => {
+    //phrase.quote.toLocaleLowerCase().includes(search);
+    //})
+    .map((phrase, index) => {
+      return (
+        <li className="eachPhrase" key={index}>
+          <p>{phrase.quote}</p>
+          <p className="character">{phrase.character}</p>
+        </li>
+      );
+    });
 
   return (
     <div className="App">
@@ -42,6 +49,17 @@ function App() {
         <h1>Frases de Friends</h1>
       </header>
       <main>
+        <form>
+          <input
+            className="newPhrase"
+            type="text"
+            name="character"
+            id="character"
+            placeholder="Filtrar por Frase"
+            value={search}
+            onChange={handleFilter}
+          />
+        </form>
         <ul>{htmlData}</ul>
         <form className="form">
           <h2> Añadir una nueva frase</h2>
