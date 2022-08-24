@@ -3,7 +3,6 @@ import firtsData from "../data/data.json";
 import { useState } from "react";
 
 function App() {
-  //variables estado
   const [data, setData] = useState(firtsData);
   const [newPhrase, setNewPhrase] = useState({
     quote: "",
@@ -29,7 +28,7 @@ function App() {
   const handleFilter = (ev) => {
     setSearch(ev.target.value);
   };
-  //pintar listado frases
+
   const htmlData = data
     //.filter((phrase) => {
     //phrase.quote.toLocaleLowerCase().includes(search);
