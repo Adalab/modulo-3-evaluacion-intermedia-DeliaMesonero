@@ -49,37 +49,44 @@ function App() {
       </header>
       <main>
         <form>
-          <input
-            className="newPhrase"
-            type="text"
-            name="character"
-            id="character"
-            placeholder="Filtrar por Frase"
-            value={search}
-            onChange={handleFilter}
-          />
+          <label htmlFor="character">
+            <input
+              className="newPhrase"
+              type="text"
+              name="character"
+              id="character"
+              placeholder="Filtrar por Frase"
+              value={search}
+              onChange={handleFilter}
+            />
+          </label>
         </form>
         <ul>{htmlData}</ul>
         <form className="form">
           <h2> Añadir una nueva frase</h2>
-          <input
-            className="newPhrase"
-            type="text"
-            name="quote"
-            id="quote"
-            placeholder="Frase"
-            value={newPhrase.quote}
-            onChange={handleNewPhrase}
-          />
-          <input
-            className="newPhrase"
-            type="text"
-            name="character"
-            id="character"
-            placeholder="Personaje"
-            value={newPhrase.character}
-            onChange={handleNewPhrase}
-          />
+          <label htmlFor="quote">
+            <input
+              className="newPhrase"
+              type="text"
+              name="quote"
+              id="quote"
+              placeholder="Frase"
+              value={newPhrase.quote}
+              onChange={handleNewPhrase}
+            />
+          </label>
+          <label htmlFor="character">
+            <input
+              className="newPhrase"
+              type="text"
+              name="character"
+              id="character"
+              placeholder="Personaje"
+              value={newPhrase.character}
+              onChange={handleNewPhrase}
+            />
+          </label>
+
           <input
             className="btn"
             type="submit"
