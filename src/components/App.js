@@ -1,15 +1,22 @@
 import "../styles/App.scss";
-import firtsData from "../data/data.json";
-import { useState } from "react";
+//import firtsData from "../data/data.json";
+import { useEffect, useState } from "react";
+import getDataApi from "../services/fetch";
 
 function App() {
-  const [data, setData] = useState(firtsData);
+  const [data, setData] = useState([]);
   const [newPhrase, setNewPhrase] = useState({
     quote: "",
     character: "",
   });
   const [search, setSearch] = useState("");
   const [filterChar, setFilterChar] = useState("all");
+
+  useEffect(() => {
+    getDataApi().then((data) => {
+      setData(data);
+    });
+  });
 
   const handleNewPhrase = (ev) => {
     setNewPhrase({
